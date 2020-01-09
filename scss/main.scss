@@ -1,10 +1,13 @@
 @import "./config";
+@import "./home";
+@import "./menu";
+@import "./about";
 
 body {
   background: $primary-color;
-  color: #fff;
+  color: setTextColor($primary-color);
   height: 100vh;
-  font-family: "Segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1;
 }
 
@@ -15,8 +18,12 @@ h3 {
 }
 
 a {
-  color: #fff;
+  color: setTextColor($primary-color);
   text-decoration: none;
+}
+
+.text-secondary {
+  color: $secondary-color;
 }
 
 header {
@@ -37,6 +44,7 @@ main {
 
     a {
       padding: 0.4 rem;
+      @include easeInOut;
 
       &:hover {
         color: $secondary-color;
@@ -52,5 +60,5 @@ footer {
   right: 1rem;
   text-align: right;
   padding: 1rem;
-  color: #fff;
+  color: setTextColor($primary-color);
 }
